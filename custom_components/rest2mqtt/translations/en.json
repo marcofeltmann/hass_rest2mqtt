@@ -1,0 +1,4 @@
+{
+  "title": "REST2MQTT",
+  "description": "Integration to call multiple REST services and store data in MQTT"
+}

@@ -1,0 +1,14 @@
+{
+  "config": {
+    "step": {
+      "configuration": {
+        "data": {
+          "host": "MQTT Host",
+          "port": "MQTT Port",
+          "restore": "Enable Restore State"
+        },
+        "title": "REST2MQTT Configuration"
+      }
+    }
+  }
+}
