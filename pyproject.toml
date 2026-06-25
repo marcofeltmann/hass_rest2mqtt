@@ -11,7 +11,7 @@
     "Programming Language :: Python :: 3"
   ],
   "urls": {
-    "Homepage": "https://github.com/example/rest2mqtt"
+    "Homepage": "https://github.com/marcofeltmann/hass_rest2mqtt"
   },
   "dependencies": {
     "homeassistant": ">=2024.0.0",

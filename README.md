@@ -87,9 +87,9 @@ custom_components/rest2mqtt/
 {
   "domain": "rest2mqtt",
   "name": "REST2MQTT",
-  "codeowners": ["@your-github-username"],
+  "codeowners": ["@marcofeltmann"],
   "config_flow": true,
-  "documentation": "https://github.com/yourusername/rest2mqtt",
+  "documentation": "https://github.com/marcofeltmann/hass_rest2mqtt",
   "iot_class": "cloud_polling",
   "requirements": ["paho-mqtt>=1.6.0", "aiohttp>=3.8.0"],
   "version": "1.0.0"
@@ -257,9 +257,9 @@ Contributions are welcome! Please read the contributing guide for detailed instr
 ## Support
 
 For issues or questions:
-- [GitHub Issues](https://github.com/yourusername/rest2mqtt/issues)
+- [GitHub Issues](https://github.com/marcofeltmann/hass_rest2mqtt/issues)
 - [Home Assistant Forums](https://community.home-assistant.io/)
 
 ## License
 
-MIT
+AGPLv3, see @LICENSE
