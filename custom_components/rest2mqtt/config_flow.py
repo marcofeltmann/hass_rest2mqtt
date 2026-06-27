@@ -3,11 +3,13 @@ from __future__ import annotations
 from typing import Any
 import voluptuous as vol
 from homeassistant import config_entries
-from homeassistant.const import CONF_HOST, CONF_PORT, CONF_RESTORE
+from homeassistant.const import CONF_HOST, CONF_PORT
 from homeassistant.core import HomeAssistant
 
 from .const import (
+    CONF_RESTORE,
     CONF_RESTORE_STATE,
+    CONF_RESTORE_STATE_DEFAULT,
     DEFAULT_HOST,
     DEFAULT_PORT,
     DEFAULT_RESTORE,
@@ -26,12 +28,12 @@ def _get_user_configuration_schema(current_data: dict[str, Any]) -> dict:
         vol.Required(
             CONF_PORT, default=current_data.get(CONF_PORT, DEFAULT_PORT)
         ): int,
-        vol.Required(
+            vol.Required(
             CONF_RESTORE, default=current_data.get(CONF_RESTORE, DEFAULT_RESTORE)
         ): bool,
         vol.Optional(
             CONF_RESTORE_STATE,
-            default=current_data.get(CONF_RESTORE_STATE, DEFAULT_RESTORE),
+            default=current_data.get(CONF_RESTORE_STATE, CONF_RESTORE_STATE_DEFAULT),
         ): bool,
     }
 
@@ -81,14 +83,9 @@ class Rest2MqttConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         data = user_input or {}
         schema = _get_user_configuration_schema(data)
         
-        step_args = {
-            "data": data,
-            "errors": errors or {},
-            "step_id": STEP_CONFIGURATION,
-        }
-        
         return self.async_show_form(
             step_id=STEP_CONFIGURATION,
             data_schema=vol.Schema(schema),
-            **step_args,
+            data=data,
+            errors=errors or {},
         )
